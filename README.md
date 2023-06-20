@@ -1,4 +1,4 @@
-# Project Name
+# Find a spot
 
 Welcome to Find a spot! This project is built using React and npm.
 
