@@ -28,8 +28,7 @@ Make sure you have the following software installed on your machine:
 <br>
 
 ### Installation
-
-1. Install project dependencies by running the following command:
+Install project dependencies by running the following command:
 
    ```shell
    npm install
@@ -37,8 +36,8 @@ Make sure you have the following software installed on your machine:
 
 <br>
 
-### Usage
 
+### Usage
 To run the project in development mode, use the following command:
 
 ```shell
@@ -47,7 +46,42 @@ npm start
 
 This will start the development server and open the application in your default browser at [http://localhost:3000](http://localhost:3000). The page will automatically reload if you make any changes to the source code.
 
+<br>
 
+
+
+## Code Examples
+```javascript
+ useEffect(() => {
+        const fetchMarkers = async () => {
+            try {
+                const response = await fetch(url, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(selectedCategories)
+                });
+
+                if (!response.ok) {
+                    throw new Error("Error al obtener los marcadores");
+                }
+                const data = await response.json();
+                const parsedData = data.map(item => ({
+                    ...item,
+                    Longitud: parseFloat(item.Longitud),
+                    Latitud: parseFloat(item.Latitud)
+                }));
+                setMarkers(parsedData);
+                setMarkers(data);
+            } catch (error) {
+                console.error("Error al obtener los marcadores:", error);
+            }
+        };
+
+        fetchMarkers();
+    }, [selectedCategories]);
+```
 
 <br>
 
