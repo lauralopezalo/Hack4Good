@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Img from 'assets/img/que-ver-en-barcelona-mapa.jpg'
+import Img from 'assets/img/barcelona-portada.jpg'
 
 export const Container = styled.section`
     background-image: url(${Img});
@@ -33,7 +33,7 @@ export const Container = styled.section`
 
 export const Title = styled.h1`
     color: white;
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-weight: 700;
     line-height: 3.5rem;
     margin-bottom: 4rem;
@@ -43,21 +43,30 @@ export const Title = styled.h1`
         margin-top: 3rem;
         margin-bottom: 5rem;
     }
+
+    @media screen and (min-width: 1024px) {
+        font-size: 6rem;
+    }
 `
 
 export const Subtitle = styled.p`
     color: white;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     line-height: 2.125rem;
     margin-bottom: 3rem;
     text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.8);
+    width: 80%;
 
     @media screen and (min-width: 640px) {
-        font-size: 1.5rem;
+        font-size: 2rem;
         line-height: 2.5rem;
+    }
+
+    @media screen and (min-width: 1024px) {
+        width: 100%;
     }
 `;
 
