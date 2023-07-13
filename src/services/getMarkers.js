@@ -1,5 +1,5 @@
 const fetchMarkers = async (selectedCategories) => {
-    const url = "http://localhost:8080/findBusinessByType";
+    const url = "https://tech4goodbackend-production.up.railway.app/findBusinessByType";
     try {
         const response = await fetch(url, {
             method: "POST",
